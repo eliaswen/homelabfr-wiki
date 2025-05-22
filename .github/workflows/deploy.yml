@@ -36,3 +36,4 @@ jobs:
         port: ${{ secrets.PORT }}
         source: "/home/runner/work/homelabfr-wiki/homelabfr-wiki/site/*"
         target: ${{ secrets.TARGET }}
+        debug: true
