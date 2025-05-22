@@ -28,12 +28,12 @@ jobs:
       run: |
         mkdocs build
     - name: Deploy
-      uses: appleboy/scp-action@v1
+      uses: garygrossgarten/github-action-scp@release
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
+        privateKey: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
-        source: "/home/runner/work/homelabfr-wiki/homelabfr-wiki/site/*"
-        target: ${{ secrets.TARGET }}
-        debug: true
+        local: "/home/runner/work/homelabfr-wiki/homelabfr-wiki/site"
+        remote: ${{ secrets.TARGET }}
+        rmRemote: true
